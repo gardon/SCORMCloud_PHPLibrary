@@ -80,7 +80,7 @@ class UploadService{
         $response = $request->CallService("rustici.upload.uploadFile");
 		write_log('rustici.upload.getUploadToken returned : '.$response);
 
-		$xml = simplexml_load_string($response);
+		$xml = simplexml_load_string($response,'SimpleXMLElement', LIBXML_NOCDATA);
 		if (false === $xml) {
             write_log('UploadService.UploadFile : xml parsing error : '.$xml);
         }

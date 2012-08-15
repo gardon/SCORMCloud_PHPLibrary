@@ -126,7 +126,7 @@ class ServiceRequest{
         private static function AssertNoErrorAndReturnXml($xmlString)
         {
 
-            $xmlDoc = simplexml_load_string($xmlString);
+            $xmlDoc = simplexml_load_string($xmlString, 'SimpleXMLElement', LIBXML_NOCDATA);
 
             $rspElements = $xmlDoc;
 			write_log('stat : '.$rspElements["stat"]);
