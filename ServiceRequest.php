@@ -219,7 +219,7 @@ class ServiceRequest{
     {
         $signing = '';
         $values = array();
-        ksort($params, SORT_STRING | SORT_FLAG_CASE);
+        ksort($params);
 
         foreach($params as $key => $value) {
             $signing .= $key . $value;
